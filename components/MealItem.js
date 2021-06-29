@@ -9,6 +9,8 @@ import {
     Platform
 } from "react-native";
 
+import DefaultText from "./DefaultText";
+
 const MealItem = props => {
 
     let TouchableCmp = TouchableOpacity
@@ -29,9 +31,9 @@ const MealItem = props => {
                         </ImageBackground>
                     </View>
                     <View style={{ ...styles.mealRow, ...styles.mealDetail }}>
-                        <Text>{props.duration}m</Text>
-                        <Text>{props.complexity.toUpperCase()}</Text>
-                        <Text>{props.affordability.toUpperCase()}</Text>
+                        <DefaultText>{props.duration}m</DefaultText>
+                        <DefaultText>{props.complexity.toUpperCase()}</DefaultText>
+                        <DefaultText>{props.affordability.toUpperCase()}</DefaultText>
                     </View>
                 </View>
             </TouchableCmp>
@@ -43,7 +45,10 @@ const styles = StyleSheet.create({
     mealItem: {
         width: '100%',
         height: 200,
-        backgroundColor: '#ccc',
+        backgroundColor: '#f5f5f5',
+        borderRadius: 10,
+        marginVertical: 10,
+        overflow: 'hidden',
     },
     mealRow: {
         flexDirection: 'row',
@@ -54,7 +59,7 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-end',
     },
     mealHeader: {
-        height: '90%',
+        height: '85%',
     },
     titleContainer: {
         backgroundColor: 'rgba(0,0,0,0.5)',
@@ -68,8 +73,10 @@ const styles = StyleSheet.create({
         textAlign: 'center',
     },
     mealDetail: {
+        height: '15%',
         paddingHorizontal: 10,
         justifyContent: 'space-between',
+        alignItems: 'center',
     },
 });
 
